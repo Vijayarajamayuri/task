@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Temperature Estimator</title>
+  <title>Name legth calculator</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -15,15 +15,12 @@
 <body>
   <main class="container-fluid">
 
-    <h1>Given temperature censius to farenheit</h1>
+    <h1>Given a name display count letters </h1>
     
 
-    <p>Enter your name:
-      <input id="guest" type="text" value="Eden">
-    </p>
 
-    <p>Enter celsius:
-      <input id="celsius" type="number" value="30">
+    <p>Enter Name length:
+      <input id="x" type="String" value="mayuri">
     </p>
 
   
@@ -39,19 +36,19 @@
 
     console.log('Declare testable functions.....................')
 
-    function temp(celsius) {
-      return (celsius*  9/5) + 32;
+    function temp(x) {
+      return x.length;
     }
     console.log('Defined division=' + temp)
 
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
-      const s = document.getElementById('guest').value
-      const i = parseInt(document.getElementById('celsius').value)
-      console.log('i=' + i)
       
-      const ans = s + ', farenheit is ' + temp(i) + 'F.'
+      const i = document.getElementById('x').value
+      console.log('i=' + i)
+  
+      const ans = ' name legth is' + temp(i) + '.'
       document.getElementById('result').innerHTML = ans
     })
 .
