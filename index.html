@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Section Estimator</title>
+  <title>Temperature Estimator</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -15,20 +15,18 @@
 <body>
   <main class="container-fluid">
 
-    <h1>Given number of students and number of sections, display average number of students per section</h1>
+    <h1>Given temperature censius to farenheit</h1>
     
 
     <p>Enter your name:
       <input id="guest" type="text" value="Eden">
     </p>
 
-    <p>Enter students:
-      <input id="students" type="number" value="30">
+    <p>Enter celsius:
+      <input id="celsius" type="number" value="30">
     </p>
 
-    <p>Enter sections:
-      <input id="sections" type="number" value="5">
-    </p>
+  
 
     <button id="clicker" class="btn btn-primary">Click me!</button>
 
@@ -41,20 +39,19 @@
 
     console.log('Declare testable functions.....................')
 
-    function div(students,sections) {
-      return students/sections;
+    function temp(celsius) {
+      return (celsius*  9/5) + 32;
     }
-    console.log('Defined division=' + div)
+    console.log('Defined division=' + temp)
 
     console.log('Declare event listeners .......................')
 
     document.getElementById('clicker').addEventListener('click', function () {
       const s = document.getElementById('guest').value
-      const i = parseInt(document.getElementById('students').value)
+      const i = parseInt(document.getElementById('celsius').value)
       console.log('i=' + i)
-      const j = parseInt(document.getElementById('sections').value)
-      console.log('j=' + j)
-      const ans = s + ', your student per section ' + div(i, j) + '.'
+      
+      const ans = s + ', farenheit is ' + temp(i) + '.'
       document.getElementById('result').innerHTML = ans
     })
 .
